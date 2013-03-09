@@ -2313,10 +2313,10 @@ static struct i2c_board_info __initdata bfin_i2c_board_info[] = {
 #endif
 #if IS_ENABLED(CONFIG_SND_SOC_SSM2602)
 	{
-		I2C_BOARD_INFO("ssm2602", 0x1b),
+		I2C_BOARD_INFO("ssm4567", 0x34),
 	},
 #endif
-#if IS_ENABLED(CONFIG_REGULATOR_AD5398)
+#if defined(CONFIG_REGULATOR_AD5398) || defined(CONFIG_REGULATOR_AD5398_MODULE)
 	{
 		I2C_BOARD_INFO("ad5398", 0xC),
 		.platform_data = (void *)&ad5398_regulator_data,
