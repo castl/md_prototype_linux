@@ -6,7 +6,13 @@
 		device_type = "memory";
 		reg = <0x00000000 0x40000000>;
 	};
-
+	pmu {
+		compatible = "arm,cortex-a9-pmu";
+		interrupt-parent = <&gic>;
+		interrupts = <0 5 4>, <0 6 4>;
+		reg = <0xf8891000 0x1000>, <0xf8893000 0x1000>;
+		reg-names = "cpu0", "cpu1";
+	} ;
 	chosen {
 		bootargs = "console=ttyPS0,115200 root=/dev/mmcblk0p2 rw earlyprintk rootfstype=ext4 rootwait devtmpfs.mount=0";
 		linux,stdout-path = "/amba@0/uart@E0001000";

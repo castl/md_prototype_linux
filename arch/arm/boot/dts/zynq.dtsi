@@ -28,12 +28,6 @@
 		};
 	};
 
-	pmu {
-		compatible = "arm,cortex-a9-pmu";
-		interrupts = <0 5 4>, <0 6 4>;
-		interrupt-parent = <&gic>;
-	};
-
 	aliases {
 		ethernet0 = &eth;
 		serial0 = &uart;
